@@ -46,7 +46,7 @@ jobs:
           name: Push to Artifactory
           command: |
             ./jfrog config add --artifactory-url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --access-token $ARTIFACTORY_TOKEN --interactive=false
-            ./jfrog rt u npmfrog local --build-name=frogBuildTest --build-number=$CIRCLE_BUILD_NUM
+            ./jfrog rt u "index.tgz" npmfrog --build-name=frogBuildTest --build-number=$CIRCLE_BUILD_NUM
             ./jfrog rt bce frogBuildTest $CIRCLE_BUILD_NUM  # collects all environment variables on the agent
             ./jfrog rt bp frogBuildTest $CIRCLE_BUILD_NUM  # attaches ^^ to the build in artifactory
 
