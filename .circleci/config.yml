@@ -52,7 +52,7 @@ jobs:
       - run:
           name: Push to Artifactory
           command: |
-            ./jfrog config add --artifactory-url http://localhost:8082/artifactory/npmfrog --access-token $ARTIFACTORY_TOKEN --interactive=false
+            ./jfrog config add --artifactory-url $ARTIFACTORY_URL --access-token $ARTIFACTORY_TOKEN --interactive=false
             ./jfrog rt u "index.js" artifactory/npmfrog --build-name=frogBuildTest --build-number=1
 
 workflows:
