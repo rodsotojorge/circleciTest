@@ -1,8 +1,8 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-orbs:
-  # artifactory-orb: jfrog/artifactory-orb@1.0.1
+#orbs:
+# artifactory-orb: jfrog/artifactory-orb@1.0.1
 #   artifactory: circleci/artifactory@1.0.0
 
 # jobs:
@@ -31,8 +31,9 @@ orbs:
 
 jobs:
   deploy:
-       docker:
-       - image: "circleci/node:12"
+    docker:
+      - image: "circleci/node:12"
+    resource_clas: large
     working_directory: ~/repo
     steps:
       - checkout
