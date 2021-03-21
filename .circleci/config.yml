@@ -50,3 +50,9 @@ jobs:
              --build-number=$CIRCLE_BUILD_NUM
             ./jfrog  bce frogBuildTest $CIRCLE_BUILD_NUM  # collects all environment variables on the agent
             ./jfrog  bp frogBuildTest $CIRCLE_BUILD_NUM  # attaches ^^ to the build in artifactory
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - deploy
