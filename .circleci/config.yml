@@ -33,7 +33,7 @@ jobs:
   deploy:
     docker:
       - image: "circleci/node:12"
-    resource_clas: large
+    resource_class: large
     working_directory: ~/repo
     steps:
       - checkout
